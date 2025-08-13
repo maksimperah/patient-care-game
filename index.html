@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hospital PC Sim — Пациентоцентричность (ICI 01:2024)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+  <header class="glass fade-in">
+    <h1>Hospital PC Sim</h1>
+    <p class="subtitle">Из хаоса — к пациентоцентричности • ICI 01:2024</p>
+    <div class="badges">
+      <span class="badge" id="badgeStage">Этап 1</span>
+      <button id="btnBoard" class="badge action">Стандарт ICI</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hud" class="fade-up">
+      <div class="meter">
+        <label>🧑‍⚕️ Удовлетворённость пациентов <b id="num_patients">30</b>%</label>
+        <div class="bar"><span id="m_patients"></span></div>
+      </div>
+      <div class="meter">
+        <label>👩‍🔬 Мотивация персонала <b id="num_staff">30</b>%</label>
+        <div class="bar"><span id="m_staff"></span></div>
+      </div>
+      <div class="meter">
+        <label>💰 Финансовая стабильность <b id="num_finance">30</b>%</label>
+        <div class="bar"><span id="m_finance"></span></div>
+      </div>
+      <div class="meter">
+        <label>📈 Зрелость стандарта <b id="num_maturity">10</b>%</label>
+        <div class="bar"><span id="m_maturity"></span></div>
+      </div>
+    </section>
+
+    <section id="stageInfo" class="card slide-in">
+      <h2 id="stageTitle"></h2>
+      <p id="stageIntro"></p>
+    </section>
+
+    <section id="event" class="card">
+      <h3 id="eventTitle"></h3>
+      <p id="eventText"></p>
+      <div id="choices" class="choices"></div>
+      <div id="hint" class="hint"></div>
+    </section>
+
+    <section id="controls" class="fade-up">
+      <button id="btnNext" disabled>Далее →</button>
+      <button id="btnSave">Сохранить</button>
+      <button id="btnLoad">Загрузить</button>
+      <button id="btnReset">Новая игра</button>
+    </section>
+
+    <section id="log" class="card">
+      <h3>Журнал</h3>
+      <ul id="logList"></ul>
+    </section>
+  </main>
+
+  <!-- Compliance board -->
+  <aside id="board" class="board hidden">
+    <div class="board-inner">
+      <div class="board-head">
+        <h3>Стандарт ICI 01:2024 — Прогресс</h3>
+        <button id="btnBoardClose">✕</button>
+      </div>
+      <p class="muted">Выполняй требования, чтобы повышать зрелость стандарта. Пункты меняют статус автоматически в зависимости от твоих решений.</p>
+      <ul id="boardList" class="board-list"></ul>
+    </div>
+  </aside>
+
+  <footer>
+    <small>v0.2 • MVP с анимациями и трекером соответствия. Контент расширяется в <code>content.js</code>.</small>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
